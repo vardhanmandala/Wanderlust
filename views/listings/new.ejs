@@ -1,0 +1,68 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="row">
+        <!-- Center the form using Bootstrap grid -->
+        <div class="col-8 offset-2">
+            <h4 class="my-4">Create a Listing</h4>
+
+            <form method="post" action="/listings" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <!-- Title -->
+                <div class="mb-2">
+                    <label for="title" class="form-label">Listing Title</label>
+                    <input type="text" id="title" name="title" placeholder="e.g., Cozy Apartment in New York" 
+                    class="form-control" >
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-2">
+                    <label for="description" class="form-label">Listing Description</label>
+                    <textarea id="description" name="description" rows="2" placeholder="e.g., A beautiful apartment with great amenities and views." class="form-control" required></textarea>
+                    <div class="invalid-feedback">
+                        Give Short Description
+                    </div>
+                </div>
+
+                <!-- Image Link -->
+                <div class="mb-2">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input type="file" id="image" name="image"class="form-control">
+                </div>
+
+                <!-- Price and Country -->
+                <div class="row">
+                    <div class="mb-2 col-md-4">
+                        <label for="price" class="form-label">Price (in ₹)</label>
+                        <input  id="price" name="price" placeholder="e.g., 5000" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Invalid Price
+                        </div>
+                    </div>
+                    <div class="mb-2 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" id="country" name="country" placeholder="e.g., India" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Invalid Country
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="mb-2">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Mumbai, Maharashtra" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please Enter the location
+                    </div>
+                </div>
+
+                
+                <div class="mb-5 text-center">
+                    <button type="submit" class="btn btn-danger">Submit Listing</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

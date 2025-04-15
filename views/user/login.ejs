@@ -1,0 +1,42 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="row mb-2 mt-2 col-8 offset-2" style="border: 2px solid red;">
+        <!-- Center the form using Bootstrap grid -->
+        <div class="col-6 offset-3">
+            <h4 class="my-2 offset-3" style="text-decoration: solid;">Login to Wanderlust</h4>
+
+            <form id="loginForm" method="post" action="/login" class="needs-validation" novalidate>
+                <!-- Username -->
+                <div class="mb-2">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Username is required
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="mb-2">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Password is required
+                    </div>
+                </div>
+
+                <div class="mb-4 text-center">
+                    <button type="submit" class="btn btn-success">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent actual submission to debug
+        console.log("Form Submitted!");
+        console.log("Username:", document.getElementById('username').value);
+        console.log("Password:", document.getElementById('password').value);
+        this.submit(); // Uncomment when debugging is done
+    });
+</script>
+

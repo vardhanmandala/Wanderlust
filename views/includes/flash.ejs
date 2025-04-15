@@ -1,0 +1,50 @@
+<% if(success && success.length) { %>
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show col-6 offset-6" role="alert">
+        <%= success %> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="progress" id="successProgressBar" role="progressbar" 
+             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 6px; border-radius: 0;">
+            <div class="progress-bar" style="width: 100%; background: linear-gradient(90deg,#74c69d, #198754); border-radius: 0;"></div>
+        </div>
+    </div>
+<% } %>
+
+<% if(failure && failure.length) { %>
+    <div id="failureAlert" class="alert alert-danger alert-dismissible fade show col-6 offset-6" role="alert">
+        <%= failure %> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="progress" id="failureProgressBar" role="progressbar" 
+             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 6px; border-radius: 0;">
+            <div class="progress-bar" style="width: 100%; background: linear-gradient(90deg, #ff416c, #ff4b2b); border-radius: 0;"></div>
+        </div>
+    </div>
+<% } %>
+
+<script>
+    function autoDismissAlert(alertId, progressBarId, duration = 2000) {
+        let interval = 50; // Update every 50ms
+        let alertBox = document.getElementById(alertId);
+        let progressBar = document.querySelector(`#${progressBarId} .progress-bar`);
+
+        if (!alertBox || !progressBar) return;
+
+        let width = 100;
+        let decrement = (interval / duration) * 100;
+
+        let progressInterval = setInterval(function () {
+            width -= decrement;
+            progressBar.style.width = width + "%";
+
+            if (width <= 0) {
+                clearInterval(progressInterval);
+                alertBox.classList.remove('show');
+                alertBox.classList.add('fade');
+                setTimeout(() => alertBox.remove(), 500);
+            }
+        }, interval);
+    }
+
+    // Auto-dismiss alerts
+    autoDismissAlert("successAlert", "successProgressBar", 2000);
+    autoDismissAlert("failureAlert", "failureProgressBar", 2000);
+</script>

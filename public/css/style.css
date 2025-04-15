@@ -1,0 +1,103 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+/* Navbar */
+
+.navbar {
+    height: 4rem;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.ri-compass-3-fill{
+    color: red;
+    font-size: 1.5rem;
+}
+
+.nav-link{
+    color: black !important;
+}
+
+/* footer */
+
+.f-links a {
+    text-decoration: none;
+    color: black;  
+    margin: 0 0.5rem; /* Add horizontal spacing between links */
+}
+
+.f-links a:hover {
+    text-decoration: underline;
+}
+
+.f-socials i {
+    margin-right: 1rem;
+    font-size: 1.5rem; /* Adjust size for icons */
+}
+
+.f-links, .f-socials, .f-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Space out children evenly */
+    align-items: center; /* Vertically center children */
+}
+
+/* card */
+
+.r-card{
+    border: 0.09rem solid black;
+    border-radius: 10px;
+}
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    width: 100% !important;
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+    height: 20rem !important;
+}
+
+.card-body{
+    padding: 0% !important;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+
+.card:hover{
+    opacity: 0.9;
+}
+
+/* Index */
+
+.sh-links{
+    text-decoration: none !important;
+}
+
+/* Addnew */
+
+.btn-danger{
+    background-color: red !important;
+}
+
+
+/* show */
